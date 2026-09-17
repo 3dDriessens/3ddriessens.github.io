@@ -186,6 +186,7 @@
     color:var(--muted);
   }
   .thumb svg{width:56%;height:56%;stroke:var(--ink);opacity:.85;}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block;}
   .badge{
     position:absolute;
     top:10px;left:10px;
@@ -320,9 +321,47 @@
   position:relative;
 }
 .detail-image svg{width:58%;height:58%;stroke:var(--ink);opacity:.85;}
+.detail-image img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;}
 .detail-info{display:grid;gap:16px;align-content:start;}
 .detail-info h1{font-size:clamp(2.1rem,5vw,3.2rem);line-height:1;}
 .detail-info p.lede{color:var(--muted);font-size:1rem;line-height:1.55;max-width:48ch;}
+.price-tag{
+  display:inline-flex;
+  align-items:baseline;
+  gap:4px;
+  background:var(--accent);
+  color:var(--accent-ink);
+  font-family:"Big Shoulders Display",sans-serif;
+  font-weight:900;
+  font-size:1.4rem;
+  padding:6px 16px;
+  border-radius:999px;
+  width:max-content;
+}
+.price-tag small{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:.65rem;letter-spacing:.05em;text-transform:uppercase;opacity:.85;}
+
+.photo-strip{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.photo-strip figure{margin:0;}
+.photo-strip img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+  display:block;
+}
+.photo-strip figcaption{
+  font-size:.78rem;
+  color:var(--muted);
+  margin-top:8px;
+}
+@media (max-width:640px){
+  .photo-strip{grid-template-columns:1fr;}
+}
 
 .color-grid{display:flex;flex-wrap:wrap;gap:12px;}
 .color-chip{
